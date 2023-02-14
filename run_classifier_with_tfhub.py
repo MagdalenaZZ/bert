@@ -27,9 +27,11 @@ import tensorflow_hub as hub
 
 import tensorflow.compat.v1 as tf
 tf.compat.v1.disable_v2_behavior()
-FLAGS = tf.app.flags.FLAGS
 
 flags = tf.flags
+FLAGS = tf.app.flags.FLAGS
+
+
 
 #FLAGS = flags.FLAGS
 
@@ -315,4 +317,5 @@ if __name__ == "__main__":
   flags.mark_flag_as_required("task_name")
   flags.mark_flag_as_required("bert_hub_module_handle")
   flags.mark_flag_as_required("output_dir")
-  tf.app.run()
+  #tf.app.run()
+  tf.compat.v1.app.run()
