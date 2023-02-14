@@ -20,14 +20,18 @@ from __future__ import print_function
 
 import os
 import optimization
-import run_classifier_with_tfhub
+import run_classifier
 import tokenization
 import tensorflow as tf
 import tensorflow_hub as hub
 
+import tensorflow.compat.v1 as tf
+tf.compat.v1.disable_v2_behavior()
+FLAGS = tf.app.flags.FLAGS
+
 flags = tf.flags
 
-FLAGS = flags.FLAGS
+#FLAGS = flags.FLAGS
 
 flags.DEFINE_string(
     "bert_hub_module_handle", None,
