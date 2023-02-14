@@ -25,10 +25,15 @@ import modeling
 import optimization
 import tokenization
 import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.compat.v1.disable_v2_behavior()
 
 flags = tf.flags
+FLAGS = tf.app.flags.FLAGS
 
-FLAGS = flags.FLAGS
+
+#flags = tf.flags
+#FLAGS = flags.FLAGS
 
 ## Required parameters
 flags.DEFINE_string(
@@ -978,4 +983,5 @@ if __name__ == "__main__":
   flags.mark_flag_as_required("vocab_file")
   flags.mark_flag_as_required("bert_config_file")
   flags.mark_flag_as_required("output_dir")
-  tf.app.run()
+  #tf.app.run()
+  tf.compat.v1.app.run()
